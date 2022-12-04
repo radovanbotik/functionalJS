@@ -1,0 +1,12 @@
+                            Closures
+1.  If we define a function that returns a function the inner function still has
+    access to internal scope of outter function
+
+    const outter = () => {
+        const x = 5
+        return () => {
+            console.log(`x is ${x}`)
+        }
+    }
+
+2. inner function still has access to x even after we return it from outter fn

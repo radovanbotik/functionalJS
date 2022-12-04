@@ -1,0 +1,26 @@
+                            Returning Functions
+
+1.  we create a outter function that takes in number as arg
+    and return new function that takes number as arg aswell
+    and from this function we can return operation that we want
+
+
+const outterfn = (number) => (number2) => number * number2
+
+is basicly:
+
+function outterfn (number) {
+    return function (number2){
+        return number * number2
+    }
+}
+
+2.  we store value of outterfn in new function:
+
+const doublemynumbers = outterfn(2)
+
+3.  we invoke new function double mynumbers with a number we want to double
+
+const doublemynumbers(3) 
+
+result : 6

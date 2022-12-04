@@ -1,0 +1,5 @@
+                            Private variables:
+
+1.  We create a function that object as argument
+2.  Destructure object and define variables inside function body
+3.  Return new object that has methods that return the variables defined above

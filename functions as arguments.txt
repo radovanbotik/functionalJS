@@ -1,0 +1,13 @@
+                            Functions as arguments
+
+1.  We can create a function that takes in another function as argument/paramter
+    and this function returns  function we passed in with arguments we provide
+
+const fnadd = x + y     
+const fndivide = x / y
+
+const doadd = (somefn) => somefn(5,10)
+const dodivide = (somefn) => somefn(4/2)
+
+const result1 = doadd(fnadd) // expected result 15
+const result2 = dodivide(fndivide) // expected result 2
