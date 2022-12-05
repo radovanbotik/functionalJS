@@ -1,0 +1,24 @@
+                                Sorting
+
+1.  It MUTATES original array
+    1.1 try to avoid mutation by array.slice().sort()
+
+2.  It takes in function as argument, however this function is 
+    comparator function and has 2 arguments instead of one.
+    they stand for any 2 elements in array that can be compared.
+
+    const names = ["john", "peter", "susan", "lisa", "marc"];
+    const sortAlphabetically = names.slice().sort();
+    console.log({ sortAlphabetically });
+
+3.  Numbers are special, you need to create a compare function that take in
+    2 arguments
+
+    const numbers = [1, 2, 500, 25, 33];
+    const sortnumbers = numbers.slice().sort((a, b) => {
+    if (a > b) return 1;
+    if (a < b) return -1;
+    if (a === b) return 0;
+    });
+    console.log({ sortnumbers }); //[1,2,25,33,500]
+

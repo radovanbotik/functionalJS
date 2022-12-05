@@ -1,0 +1,56 @@
+                                    Filtering
+
+1.  The difference between map and filter is that we pass in function
+    that results into true or false for each element
+
+    const numbers = [1,2,3,4,5,6]
+    const evennumbers = numbers.filter(number=>number % 2 === 0)
+
+    or
+
+    const isEven = (number) => number % 2 === 0
+    const evennumbers = numbers.filter(isEven)
+
+
+    const words = ["cat", "table", "chair", "earth", "rock"];
+    const lessthan5chars = words.filter(word => word.length < 5);
+    
+
+    //HOC    
+
+const items = [
+  "pen",
+  "chair",
+  "table",
+  "book",
+  "fridge",
+  "television",
+  "smartphone",
+];
+const testForLength = length => word => word.length > length;
+const isMoreThan4 = testForLength(4);
+const moreThan4 = items.filter(isMoreThan4);
+console.log(moreThan4);
+
+///////////////////////////////////////////////////////////
+
+const people = ["john", "peter", "susan", "marc", "leo"];
+const firstCharTest = char => person => person.charAt(0) === char;
+const isCharacterP = firstCharTest("p");
+//isCharacterP is basicly just person => person.charAt(0) === 'p'
+const startsWithP = people.filter(isCharacterP);
+console.log(startsWithP);
+
+/////SIMPLIFIED/////////
+
+1.  we create HOC that takes in value that represents initial character
+    and returns new function
+2.  New function now takes in a drink as a value
+    and returns drinks that meet the condition
+3.  We call filter on our array of drinks and as a callback function
+    we use our HOC function that we invoke we value wa want.
+
+const drinks = ["beer", "vodka", "rum", "cognac", "water", "whiskey", "coke"];
+const initCharHOC = initChar => drink => drink.charAt(0) === initChar;
+const initwithW = drinks.filter(initCharHOC("w"));
+console.log(initwithW);

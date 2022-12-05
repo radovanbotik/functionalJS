@@ -1,0 +1,40 @@
+                        Spread Operator 
+
+1.  Can be used to combine objects without mutating them
+
+    const obj1 = {},
+    const obj2 = {},
+    const obj3 = {...obj1,...obj2}
+
+2.  We can selectively choose what to copy
+    We create a new key and assign it a value from previous object
+
+    const obj1 = {name:'rado',age:29}
+    const obj2 = {phone:'samsung'}
+    const obj3 = {obj.name,...obj2} // {name:'rado',phone:'samsung'}
+
+3.  If objects should have same property/key whichever one comes last overwrites
+    the one which comes before
+
+    const obj1 = {statement1: true, greeting:'hello'}
+    const obj2 = {statement2: true, greeting:'hi}
+
+    const together = {...obj1,...obj1} 
+    // {statement1:'true',statement2:'true', greeting:'hi'} //
+
+    3.1 we can use this to create Updates
+
+        const person = {name: 'Gandalf Grey', age:100}
+        const update = {name: 'Gandalf White'}
+
+        const personUpdated = {...person,...update}
+
+4. Can be used with arrays with aswell without mutating array(e.g array.push())
+    
+    const numbers = [1,2,3,4]
+    const morenumbers = [0,...numbers,5]
+
+5. Can be also used to spread strings
+
+    const animal = 'turtle'
+    const spreadstring = [...animal]

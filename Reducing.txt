@@ -1,0 +1,26 @@
+                                Reduce
+
+1.  Reducing array of data to a single value
+
+    const nums = [1,2,3,4,5,6,7,8,9]
+    1.  0   =>  starting value
+    2.  0+1 =>  add the first entry to starting value
+    3.  1+2 =>  add the second entry to total
+    4.  3+3 =>  add the third entry to total
+
+    const nums = [20, 40, 60, 80, 100];
+    const sum = nums.reduce((prev, current) => prev + current, 22);
+    console.log(sum); //322
+
+    array.reduce((acc,element)=> {
+        ...
+        return...
+    },initialValue)
+
+    1.  acc is the value we built up on top of initial value, so like current total
+    2.  element is a single entry
+    3.  we are telling reduce how to combine current value of acc with the 
+        current element we have
+    4.  initial value is a starting value    
+    5.  acc is initialy equal to initialValue and then on second run is 
+        equal to element

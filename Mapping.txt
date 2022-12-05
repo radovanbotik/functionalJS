@@ -1,0 +1,11 @@
+                                    Mapping
+
+1.  We call map on array and pass a function to the map that we want to 
+    apply to each element in that array.
+    Map then returns another array that contains the return values of the
+    function for each element in our original array.
+
+2.  It doesnt mutate original source, it returns a new copy.
+
+3.  const arrray = [1,2,3]
+    const doublevalues = array.map(number=>number *2)
