@@ -1,0 +1,30 @@
+                                Recursion
+
+1.  recursive function is a function that call itself inside its own body
+    so we can achieve looping like effect without using looping
+
+2. recursive function always needs a condition that tells function when to stop
+
+const countdown = x => {
+  if (x < 0) return;
+  console.log(x);
+  countdown(x - 1);
+};
+
+countdown(10);
+
+
+
+const countup = (x, limit) => {
+  if (x > limit) return;
+  console.log(x);
+  countup(x + 1, limit);
+};
+
+countup(1, 100);
+
+
+1.  countup takes 2 args :number and upperlimit
+2.  we set a condition, if x is larger than limit return(stop)
+3.  countup invokes itself inside its own body
+    and adds 1 for each iteration and sets limit to 100 in each iteration.

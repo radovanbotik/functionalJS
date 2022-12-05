@@ -1,0 +1,51 @@
+                    Currying and partial application
+
+1.  function addPartial takes in 1 argument x and returns anonymous function
+    that takes in 2 other arguments y,z and returns our original function
+    add(x,y,z)
+
+const add = (x, y, z) => x + y + z;
+const addPartial = x => (y, z) => add(x, y, z);
+2.  we call it like this:
+    we fix value of x to 5
+    const add5 = addPartial(5);
+    then we pass remaining two arguments
+    const sum = add(10, 20);
+
+const add = (x, y, z) => x + y + z;
+const addPartial = x => (y, z) => add(x, y, z);
+const add5 = addPartial(5);
+const sum = add5(10, 20);
+
+console.log({ sum }); //35
+
+3.  the purpose is not to pass all the arguments at the same time
+    we can pass arguments at different times and different parts of code
+
+1.  We have a function add that is supposed to get sum of 3 variables
+2.  we only have 1 avaible at the time / one variable is in common
+    and we want to apply it immidiately
+
+    const add(n,m,p)=>n+m+p
+    const addN = n => (m,p) => add (n,m,p)
+    
+3.  We have the value for n and its 3
+    //addN(3) holds a value of 3 for n and returns a function that accepts 2 args
+    const withN = addN(3)
+4.  Now we receive remainign values and we want to invoke evertyhing
+    const addAll = withN(10,20)
+
+    //res 33
+
+
+1.  Currying adding 1 element at the time
+
+const add1 = (x, y, z) => x + y + z;
+const addPartial1 = x => y => z => add(x, y, z);
+const addedx = addPartial1(5);
+const addedxy = addedx(6);
+const addedxyz = addedxy(7);
+console.log(addedxyz); //18
+// or alternative
+
+const result = addPartial(5)(6)(7);

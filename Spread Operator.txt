@@ -29,12 +29,18 @@
 
         const personUpdated = {...person,...update}
 
-4. Can be used with arrays with aswell without mutating array(e.g array.push())
+4.  Can be used with arrays with aswell without mutating array(e.g array.push())
     
     const numbers = [1,2,3,4]
     const morenumbers = [0,...numbers,5]
 
-5. Can be also used to spread strings
+5.  Can be also used to spread strings
 
     const animal = 'turtle'
     const spreadstring = [...animal]
+
+6.  We can use spread operator to pass array values to function
+
+    const nums = [1,2,3]
+    const add = (x,y,z) => x + y + z 
+    add((...nums))

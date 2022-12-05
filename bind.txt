@@ -1,0 +1,12 @@
+                    Bind
+
+1.  can be used to applied partial application
+    we are binding value of 1 to the x
+
+const nums = [1,2,3]
+const add = (x,y,z) => x + y + z
+
+const add1 = add.bind(null,1);
+// (1,y,z)
+const res = add1(5,10)
+//16
